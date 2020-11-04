@@ -1,0 +1,187 @@
+---
+title: "PracticaProbabilidad"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Práctica 2 - Modelos de distribución de probabilidad
+
+### Ejercicio 1
+
+```{r}
+library(scales)
+library(PASWR2)
+datos <- BATTERY
+```
+
+#### Histograma
+Relizamos un histograma sobre la variable "Lifetime".
+
+```{r pressure, echo=FALSE}
+hist(datos$lifetime, col='red', main="Histograma sobre el tiempo de vida de las baterias", 
+     xlab="Lifetime")
+```
+
+#### Conjuntos de datos
+Separamos los datos en función del campo "Facility".
+
+```{r}
+datos_a <- datos[which(datos$facility=='A'),]
+datos_b <- datos[which(datos$facility=='B'),]
+```
+
+
+#### Histogramas independientes
+
+Procedemos a crear un histograma para cada conjunto de datos y observar sus resultados.
+
+```{r}
+hist(datos_a$lifetime, col='red', main="Histograma sobre el tiempo de vida de las baterias A", 
+     xlab="Lifetime")
+hist(datos_b$lifetime, col='red', main="Histograma sobre el tiempo de vida de las baterias B",
+     xlab="Lifetime")
+```
+
+Como podemos observar, a simple vista ya se puede apreciar que ambos histogramas siguen una distribución normal.
+
+
+
+#### Análisis de histogramas
+
+
+```{r}
+hist(datos_a$lifetime, col='red', main="Histograma sobre el tiempo de vida de las baterias A", 
+     xlab="Lifetime", freq=FALSE)
+curve(dnorm(x,mean(datos_a$lifetime),sd(datos_a$lifetime)), add = TRUE, lwd = 2, lty = 2)
+```
+
+
+
+
+```{r}
+hist(datos_b$lifetime, col='red', main="Histograma sobre el tiempo de vida de las baterias B", 
+     xlab="Lifetime", freq=FALSE)
+curve(dnorm(x,mean(datos_b$lifetime),sd(datos_b$lifetime)), add = TRUE, lwd = 2, lty = 2)
+```
+
+
+#### Gráficos quantil-quantil
+
+Representando los gráficos quantil-quantil, también podemos ver como sigue una distribución normal.
+
+
+```{r}
+qqnorm(datos_a$lifetime, pch = 20, col =alpha("red4", 0.5),las = 1)
+grid()
+qqline(datos_a$lifetime, lwd = 2)
+```
+
+```{r}
+qqnorm(datos_b$lifetime, pch = 20, col =alpha("red4", 0.5),las = 1)
+grid()
+qqline(datos_b$lifetime, lwd = 2)
+```
+
+
+
+
+### Ejercicio 2
+
+#### Estimación puntual de media y desviación típica.
+
+Calculamos la media y desviación típica en ambos conjuntos de datos.
+
+```{r}
+mean_a = mean(datos_a$lifetime)
+sd_a = sd(datos_a$lifetime)
+```
+
+
+```{r}
+mean_b = mean(datos_b$lifetime)
+sd_b = sd(datos_b$lifetime)
+```
+
+
+#### Probabilidad de que una bateria del tipo A dure más de 210 horas.
+
+```{r}
+length(which(datos_a$lifetime > 210))/length(datos_a$lifetime)
+```
+
+#### Probabilidad de una batería del tipo B dure menos de 175 horas.
+
+```{r}
+length(which(datos_b$lifetime < 175))/length(datos_b$lifetime)
+```
+
+#### Cuantil 0.03
+
+```{r}
+quantile(datos_b$lifetime, 0.03)
+```
+
+
+
+
+## Actividad 3
+
+#### Calcula la probabilidad de que en un lote de 10 baterías, no haya ninguna defectuosa (ayuda: distribución binomial).
+
+```{r}
+pbinom(q = 0, size = 10, prob = 0.02)
+```
+#### Imagina que las baterías se fabrican en serie e independientemente. ¿Cuál es la probabilidad de que la batería producida en quinto lugar sea la primera defectuosa? (ayuda: distribución geométrica.)
+
+```{r}
+pgeom(q = 4, prob = 0.02, lower.tail = FALSE)
+```
+
+#### Supongamos que en una caja de 20 baterías van 3 defectuosas. ¿Cuál es la probabilidad de que al tomar una muestra sin reposición de 5 baterías al menos una sea defectuosa? (ayuda: distribución hipergeométrica)
+
+```{r}
+dhyper(x = 1, m = 3, k = 5, n = 20-3)
+```
+## Actividad 4
+
+### ¿Cuál es la probabilidad de que un día se produzcan más de 20 baterías defectuosas?
+```{r}
+1 - ppois(lambda = 12, q = 20)
+```
+
+### ¿Cuál es la probabilidad de que un día no salga ninguna batería defectuosa de la fábrica?
+```{r}
+ppois(lambda = 12, q = 0)
+```
+
+### La fábrica funciona de lunes a viernes. ¿Qué distribución sigue el número de baterías defectuosas porsemana? Justifica qué propiedad se aplica.
+
+Podría seguir una distribución continua exponencial, ya que esta solo se basa en la media en la que ocurre un evento, y en este caso se puede calcular esa media a partir de la media de que ocurra cada día (no varía)
+
+
+## Actividad 5
+### Realiza una simulación de la producción semanal de baterías (recuerda: 5 días de produccción, a 1000baterías por día). Guarda los datos en un vector.
+```{r}
+a=100
+b=185
+set.seed(1)
+simulation = rweibull(5000, shape=a, scale=b)
+```
+
+### Con este nuevo proceso, ¿se mejora realmente la duración media de las baterías?
+```{r}
+esperanza = b * gamma(1+1/a)
+```
+Si que se mejoran con respecto al ejercicio 2, ya que tenían una esperanda de 179.68 y ahora 183.95
+
+### Los ingenieros no lo tienen muy claro (parece que la diferencia no es tanta en promedio y los nuevosmateriales son costosos). Para demostrarles que merece la pena, calcula la proporción de bateríasdefectuosas que producirá probablemente el nuevo proceso y compárala con el anterior (lapquecalculamos en la actividad 2).
+```{r}
+mean = mean(simulation)
+sd = sd(simulation)
+pnorm(174,mean=mean,sd=sd,lower.tail=TRUE)
+```
+
+Ahora sale una probabilidad de 1.33 por diez a la menos cinco, y antes salía 0.03
