@@ -1,6 +1,8 @@
 ---
 title: "PracticaProbabilidad"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -14,6 +16,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(scales)
 library(PASWR2)
+library(normtest)
+library(nortest)
 datos <- BATTERY
 ```
 
@@ -31,6 +35,8 @@ Separamos los datos en función del campo "Facility".
 ```{r}
 datos_a <- datos[which(datos$facility=='A'),]
 datos_b <- datos[which(datos$facility=='B'),]
+datos_a1 <- datos$lifetime[datos$facility=='A']
+datos_b1 <- datos$lifetime[datos$facility=='B']
 ```
 
 
@@ -48,15 +54,13 @@ hist(datos_b$lifetime, col='red', main="Histograma sobre el tiempo de vida de la
 Como podemos observar, a simple vista ya se puede apreciar que ambos histogramas siguen una distribución normal, pero realizaremos test de normalidad.
 
 ```{r}
-shapiro.test(datos_a)
-ad.test(datos_a)
-jb.norm.test(datos_a)
-hegazy1.norm.test(datos_a, nrepl=20000)
+ad.test(datos_a1)
+jb.norm.test(datos_a1)
+hegazy1.norm.test(datos_a1, nrepl=20000)
 
-shapiro.test(datos_b)
-ad.test(datos_b)
-jb.norm.test(datos_b)
-hegazy1.norm.test(datos_b, nrepl=20000)
+ad.test(datos_b1)
+jb.norm.test(datos_b1)
+hegazy1.norm.test(datos_b1, nrepl=20000)
 
 ```
 
@@ -110,12 +114,16 @@ Calculamos la media y desviación típica en ambos conjuntos de datos.
 ```{r}
 mean_a = mean(datos_a$lifetime)
 sd_a = sd(datos_a$lifetime)
+mean_a
+sd_a
 ```
 
 
 ```{r}
 mean_b = mean(datos_b$lifetime)
 sd_b = sd(datos_b$lifetime)
+mean_b 
+sd_b
 ```
 
 
@@ -123,21 +131,22 @@ sd_b = sd(datos_b$lifetime)
 
 ```{r}
 
-pnorm(210,mean=media_a,sd=sd_a,lower.tail=FALSE)
-pnorm(210,mean=media_a,sd=sd_a,lower.tail=TRUE)
+pnorm(210,mean=mean_a,sd=sd_a,lower.tail=FALSE)
+pnorm(210,mean=mean_a,sd=sd_a,lower.tail=TRUE)
 
 ```
 
 #### Probabilidad de una batería del tipo B dure menos de 175 horas.
 
 ```{r}
-prob_a2_3<-pnorm(175,mean=media_b,sd=sd_b,lower.tail=TRUE)
+prob_a2_3<-pnorm(175,mean=mean_b,sd=sd_b,lower.tail=TRUE)
+prob_a2_3
 ```
 
 #### Cuantil 0.03
 
 ```{r}
-qnorm(0.03,mean=media_b,sd=sd_b,lower.tail=TRUE)
+qnorm(0.03,mean=mean_b,sd=sd_b,lower.tail=TRUE)
 ```
 
 
@@ -200,4 +209,4 @@ sd = sd(simulation)
 pnorm(174,mean=mean,sd=sd,lower.tail=TRUE)
 ```
 
-Ahora sale una probabilidad de 1.33 por diez a la menos cinco, y antes salía 0.03
+Ahora sale una probabilidad de 1.62 por diez a la menos cinco, y antes salía 0.03
