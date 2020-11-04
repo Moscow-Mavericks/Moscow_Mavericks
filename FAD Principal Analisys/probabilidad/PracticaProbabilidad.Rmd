@@ -45,9 +45,22 @@ hist(datos_b$lifetime, col='red', main="Histograma sobre el tiempo de vida de la
      xlab="Lifetime")
 ```
 
-Como podemos observar, a simple vista ya se puede apreciar que ambos histogramas siguen una distribución normal.
+Como podemos observar, a simple vista ya se puede apreciar que ambos histogramas siguen una distribución normal, pero realizaremos test de normalidad.
 
+```{r}
+shapiro.test(datos_a)
+ad.test(datos_a)
+jb.norm.test(datos_a)
+hegazy1.norm.test(datos_a, nrepl=20000)
 
+shapiro.test(datos_b)
+ad.test(datos_b)
+jb.norm.test(datos_b)
+hegazy1.norm.test(datos_b, nrepl=20000)
+
+```
+
+Podemos observar que los p-value son menor que la significancia, de modo que aceptamos la normalidad de los datos.
 
 #### Análisis de histogramas
 
@@ -109,19 +122,22 @@ sd_b = sd(datos_b$lifetime)
 #### Probabilidad de que una bateria del tipo A dure más de 210 horas.
 
 ```{r}
-length(which(datos_a$lifetime > 210))/length(datos_a$lifetime)
+
+pnorm(210,mean=media_a,sd=sd_a,lower.tail=FALSE)
+pnorm(210,mean=media_a,sd=sd_a,lower.tail=TRUE)
+
 ```
 
 #### Probabilidad de una batería del tipo B dure menos de 175 horas.
 
 ```{r}
-length(which(datos_b$lifetime < 175))/length(datos_b$lifetime)
+prob_a2_3<-pnorm(175,mean=media_b,sd=sd_b,lower.tail=TRUE)
 ```
 
 #### Cuantil 0.03
 
 ```{r}
-quantile(datos_b$lifetime, 0.03)
+qnorm(0.03,mean=media_b,sd=sd_b,lower.tail=TRUE)
 ```
 
 
@@ -132,18 +148,18 @@ quantile(datos_b$lifetime, 0.03)
 #### Calcula la probabilidad de que en un lote de 10 baterías, no haya ninguna defectuosa (ayuda: distribución binomial).
 
 ```{r}
-pbinom(q = 0, size = 10, prob = 0.02)
+pbinom(q = 0, size = 10, prob = prob_a2_3)
 ```
 #### Imagina que las baterías se fabrican en serie e independientemente. ¿Cuál es la probabilidad de que la batería producida en quinto lugar sea la primera defectuosa? (ayuda: distribución geométrica.)
 
 ```{r}
-pgeom(q = 4, prob = 0.02, lower.tail = FALSE)
+pgeom(q = 4, prob = prob_a2_3, lower.tail = FALSE)
 ```
 
 #### Supongamos que en una caja de 20 baterías van 3 defectuosas. ¿Cuál es la probabilidad de que al tomar una muestra sin reposición de 5 baterías al menos una sea defectuosa? (ayuda: distribución hipergeométrica)
 
 ```{r}
-dhyper(x = 1, m = 3, k = 5, n = 20-3)
+1-dhyper(x=0,m=3,n=17,k=5)
 ```
 ## Actividad 4
 
@@ -154,7 +170,7 @@ dhyper(x = 1, m = 3, k = 5, n = 20-3)
 
 ### ¿Cuál es la probabilidad de que un día no salga ninguna batería defectuosa de la fábrica?
 ```{r}
-ppois(lambda = 12, q = 0)
+dpois(0,12)
 ```
 
 ### La fábrica funciona de lunes a viernes. ¿Qué distribución sigue el número de baterías defectuosas porsemana? Justifica qué propiedad se aplica.
@@ -175,7 +191,7 @@ simulation = rweibull(5000, shape=a, scale=b)
 ```{r}
 esperanza = b * gamma(1+1/a)
 ```
-Si que se mejoran con respecto al ejercicio 2, ya que tenían una esperanda de 179.68 y ahora 183.95
+Si que se mejoran con respecto al ejercicio 2, ya que tenían una esperanda de 179.68 y ahora 183.95, aunque no es muy notable la mejora
 
 ### Los ingenieros no lo tienen muy claro (parece que la diferencia no es tanta en promedio y los nuevosmateriales son costosos). Para demostrarles que merece la pena, calcula la proporción de bateríasdefectuosas que producirá probablemente el nuevo proceso y compárala con el anterior (lapquecalculamos en la actividad 2).
 ```{r}
