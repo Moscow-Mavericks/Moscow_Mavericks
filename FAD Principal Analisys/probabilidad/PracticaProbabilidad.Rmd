@@ -49,7 +49,8 @@ Como podemos observar, a simple vista ya se puede apreciar que ambos histogramas
 
 ```{r}
 shapiro.test(datos_a)
-ad.test(datos_a)
+```
+<!--ad.test(datos_a)
 jb.norm.test(datos_a)
 hegazy1.norm.test(datos_a, nrepl=20000)
 
@@ -58,7 +59,7 @@ ad.test(datos_b)
 jb.norm.test(datos_b)
 hegazy1.norm.test(datos_b, nrepl=20000)
 
-```
+```<!-->
 
 Podemos observar que los p-value son menor que la significancia, de modo que aceptamos la normalidad de los datos.
 
