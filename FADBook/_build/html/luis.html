@@ -1,0 +1,1480 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>deposit_type: &#8212; Fund. Análisis de Datos</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="EDA - Fundamentos de Análisis de Datos" href="Hotels_eda_analysis.html" />
+    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Fund. Análisis de Datos</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="content.html">
+   Content in Jupyter Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="markdown.html">
+     Markdown Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks.html">
+     Content with notebooks
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   deposit_type:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#agent">
+   Agent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#company">
+   Company
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#days-in-waiting-list">
+   Days_in_waiting_list
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#customer-type">
+   Customer_type:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#adr">
+   ADR:
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hotels_eda_analysis.html">
+   EDA - Fundamentos de Análisis de Datos
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/luis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/Moscow-Mavericks/Moscow_Mavericks"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Moscow-Mavericks/Moscow_Mavericks/develop?urlpath=tree/docs/luis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   deposit_type:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agent">
+   Agent
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#company">
+   Company
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#days-in-waiting-list">
+   Days_in_waiting_list
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#customer-type">
+   Customer_type:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adr">
+   ADR:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#required-car-parking-spaces">
+     Required_car_parking_spaces:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total-of-special-requests">
+     Total_of_special_requests:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reservation-status">
+     reservation_status:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reservation-status-date">
+     reservation_status_date
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_booking</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;EDAbooking.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="n">datos_booking</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">df_booking</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">datos_booking</span><span class="p">)</span>
+<span class="n">df_booking</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="n">dd9edfc35ae</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">datos_booking</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;EDAbooking.csv&quot;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">datos_booking</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df_booking</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">datos_booking</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">df_booking</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="nn">D:\AnacondaPython\lib\site-packages\pandas\io\parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span> 
+<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+
+<span class="nn">D:\AnacondaPython\lib\site-packages\pandas\io\parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> 
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span> 
+<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">D:\AnacondaPython\lib\site-packages\pandas\io\parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span> 
+<span class="ne">--&gt; </span><span class="mi">946</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> 
+<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">D:\AnacondaPython\lib\site-packages\pandas\io\parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+
+<span class="nn">D:\AnacondaPython\lib\site-packages\pandas\io\parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2006</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2007</span> 
+<span class="ne">-&gt; </span><span class="mi">2008</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2009</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2010</span> 
+
+<span class="nn">pandas\_libs\parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="nn">pandas\_libs\parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;EDAbooking.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_booking</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;deposit_type&#39;</span><span class="p">,</span> <span class="s1">&#39;agent&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="s1">&#39;days_in_waiting_list&#39;</span><span class="p">,</span> <span class="s1">&#39;customer_type&#39;</span><span class="p">,</span> <span class="s1">&#39;adr&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;required_car_parking_spaces&#39;</span><span class="p">,</span> <span class="s1">&#39;total_of_special_requests&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;reservation_status&#39;</span><span class="p">,</span> <span class="s1">&#39;reservation_status_date&#39;</span><span class="p">])</span>
+<span class="n">df_EDA_variables</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>deposit_type</th>
+      <th>agent</th>
+      <th>company</th>
+      <th>days_in_waiting_list</th>
+      <th>customer_type</th>
+      <th>adr</th>
+      <th>required_car_parking_spaces</th>
+      <th>total_of_special_requests</th>
+      <th>reservation_status</th>
+      <th>reservation_status_date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>No Deposit</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient</td>
+      <td>164.44</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canceled</td>
+      <td>24/02/2017</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>No Deposit</td>
+      <td>250.0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient</td>
+      <td>67.00</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Check-Out</td>
+      <td>20/02/2017</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Non Refund</td>
+      <td>58.0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient</td>
+      <td>100.00</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canceled</td>
+      <td>24/01/2017</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>No Deposit</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient-Party</td>
+      <td>90.00</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Check-Out</td>
+      <td>28/11/2016</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>No Deposit</td>
+      <td>14.0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient</td>
+      <td>174.33</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canceled</td>
+      <td>22/05/2017</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9995</th>
+      <td>No Deposit</td>
+      <td>250.0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient</td>
+      <td>77.00</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Check-Out</td>
+      <td>22/01/2017</td>
+    </tr>
+    <tr>
+      <th>9996</th>
+      <td>No Deposit</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient</td>
+      <td>97.20</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canceled</td>
+      <td>14/12/2016</td>
+    </tr>
+    <tr>
+      <th>9997</th>
+      <td>No Deposit</td>
+      <td>9.0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient</td>
+      <td>68.70</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canceled</td>
+      <td>19/01/2016</td>
+    </tr>
+    <tr>
+      <th>9998</th>
+      <td>Non Refund</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient</td>
+      <td>170.00</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canceled</td>
+      <td>09/09/2015</td>
+    </tr>
+    <tr>
+      <th>9999</th>
+      <td>No Deposit</td>
+      <td>241.0</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>Transient</td>
+      <td>68.33</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canceled</td>
+      <td>01/02/2017</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 10000 entries, 0 to 9999
+Data columns (total 10 columns):
+ #   Column                       Non-Null Count  Dtype  
+---  ------                       --------------  -----  
+ 0   deposit_type                 10000 non-null  object 
+ 1   agent                        8654 non-null   float64
+ 2   company                      559 non-null    float64
+ 3   days_in_waiting_list         10000 non-null  int64  
+ 4   customer_type                10000 non-null  object 
+ 5   adr                          10000 non-null  float64
+ 6   required_car_parking_spaces  10000 non-null  int64  
+ 7   total_of_special_requests    10000 non-null  int64  
+ 8   reservation_status           10000 non-null  object 
+ 9   reservation_status_date      10000 non-null  object 
+dtypes: float64(3), int64(3), object(4)
+memory usage: 781.4+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deposit-type">
+<h1>deposit_type:<a class="headerlink" href="#deposit-type" title="Permalink to this headline">¶</a></h1>
+<p>Variable categórica (cualitativa) que describe si los clientes han efectuado depósitos anticipados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_EDA_variables</span><span class="o">.</span><span class="n">deposit_type</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">cuenta_No_deposit</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">cuenta_Non_refund</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">cuenta_Refundable</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">df_EDA_variables</span><span class="o">.</span><span class="n">deposit_type</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">elemento</span> <span class="o">==</span> <span class="s2">&quot;No Deposit&quot;</span><span class="p">):</span>
+        <span class="n">cuenta_No_deposit</span><span class="o">=</span><span class="n">cuenta_No_deposit</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">elemento</span> <span class="o">==</span> <span class="s2">&quot;Non Refund&quot;</span><span class="p">):</span>
+        <span class="n">cuenta_Non_refund</span><span class="o">=</span><span class="n">cuenta_Non_refund</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">elemento</span> <span class="o">==</span> <span class="s2">&quot;Refundable&quot;</span><span class="p">):</span>
+        <span class="n">cuenta_Refundable</span> <span class="o">=</span> <span class="n">cuenta_Refundable</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">frecuencia_No_deposit</span><span class="o">=</span> <span class="n">cuenta_No_deposit</span><span class="o">/</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El porcentaje de reservas sin depositos es: &quot;</span><span class="p">,</span> <span class="n">frecuencia_No_deposit</span><span class="p">,</span><span class="s2">&quot;%&quot;</span><span class="p">)</span>
+
+<span class="n">frecuencia_Non_refund</span><span class="o">=</span> <span class="n">cuenta_Non_refund</span><span class="o">/</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El porcentaje de depositos sin reembolso es: &quot;</span><span class="p">,</span><span class="n">frecuencia_Non_refund</span><span class="p">,</span><span class="s2">&quot;%&quot;</span><span class="p">)</span>
+
+<span class="n">frecuencia_Refundable</span><span class="o">=</span><span class="n">cuenta_Refundable</span><span class="o">/</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El porcentaje de despositos reembolsables es: &quot;</span><span class="p">,</span><span class="n">frecuencia_Refundable</span><span class="p">,</span><span class="s2">&quot;%&quot;</span><span class="p">)</span>
+
+<span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;deposit_type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;No Deposit&#39; &#39;Non Refund&#39; &#39;Refundable&#39;]
+El porcentaje de reservas sin depositos es:  87.97 %
+El porcentaje de depositos sin reembolso es:  11.95 %
+El porcentaje de despositos reembolsables es:  0.08 %
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count          10000
+unique             3
+top       No Deposit
+freq            8797
+Name: deposit_type, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;deposit_type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x2992649fe88&gt;
+</pre></div>
+</div>
+<img alt="_images/luis_6_1.png" src="_images/luis_6_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Comparación respecto is_canceled</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;deposit_type&#39;</span><span class="p">],</span> <span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;is_canceled&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">/</span><span class="n">r</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>is_canceled</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>deposit_type</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No Deposit</th>
+      <td>0.709105</td>
+      <td>0.290895</td>
+    </tr>
+    <tr>
+      <th>Non Refund</th>
+      <td>0.003347</td>
+      <td>0.996653</td>
+    </tr>
+    <tr>
+      <th>Refundable</th>
+      <td>0.875000</td>
+      <td>0.125000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="agent">
+<h1>Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h1>
+<p>la variable AGENT (cualitativa) esun id que indica la agencia de viajes que hace la reserva.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">id_agencias</span><span class="o">=</span><span class="n">df_EDA_variables</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">frecuencia_id_agencias</span><span class="o">=</span><span class="n">df_EDA_variables</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">porcentaje_frecuencias_id_agencias</span><span class="o">=</span><span class="n">df_EDA_variables</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="mf">9.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El número de reserva hechas por cada id:&quot;</span><span class="p">,</span><span class="n">frecuencia_id_agencias</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El porcentaje de reservas por cada id:&quot;</span><span class="p">,</span> <span class="n">porcentaje_frecuencias_id_agencias</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El número de reserva hechas por cada id: 9.0      2679
+240.0    1227
+1.0       620
+14.0      316
+7.0       304
+         ... 
+173.0       1
+261.0       1
+384.0       1
+32.0        1
+427.0       1
+Name: agent, Length: 221, dtype: int64
+El porcentaje de reservas por cada id: 9.0      0.309568
+240.0    0.141784
+1.0      0.071643
+14.0     0.036515
+7.0      0.035128
+           ...   
+173.0    0.000116
+261.0    0.000116
+384.0    0.000116
+32.0     0.000116
+427.0    0.000116
+Name: agent, Length: 221, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="company">
+<h1>Company<a class="headerlink" href="#company" title="Permalink to this headline">¶</a></h1>
+<p>La variable company es un identificador de la empresa o entidad que realiza la reserva.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">id_compañias</span><span class="o">=</span><span class="n">df_EDA_variables</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">frecuencia_id_compañia</span><span class="o">=</span><span class="n">df_EDA_variables</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">porcentaje_frecuencias_id_compañia</span><span class="o">=</span><span class="n">df_EDA_variables</span><span class="o">.</span><span class="n">company</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="mf">40.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El número de reserva hechas por cada id:&quot;</span><span class="p">,</span><span class="n">frecuencia_id_compañia</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El porcentaje de reservas por cada id:&quot;</span><span class="p">,</span> <span class="n">porcentaje_frecuencias_id_compañia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El número de reserva hechas por cada id: 40.0     83
+223.0    57
+45.0     20
+153.0    19
+219.0    15
+         ..
+88.0      1
+120.0     1
+144.0     1
+130.0     1
+484.0     1
+Name: company, Length: 143, dtype: int64
+El porcentaje de reservas por cada id: 40.0     0.148479
+223.0    0.101968
+45.0     0.035778
+153.0    0.033989
+219.0    0.026834
+           ...   
+88.0     0.001789
+120.0    0.001789
+144.0    0.001789
+130.0    0.001789
+484.0    0.001789
+Name: company, Length: 143, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="days-in-waiting-list">
+<h1>Days_in_waiting_list<a class="headerlink" href="#days-in-waiting-list" title="Permalink to this headline">¶</a></h1>
+<p>Variable cuantitativa que recoge el número de días que pasan hasta que el usuario confirma la reserva.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;days_in_waiting_list&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    10000.000000
+mean         2.201200
+std         17.405235
+min          0.000000
+25%          0.000000
+50%          0.000000
+75%          0.000000
+max        391.000000
+Name: days_in_waiting_list, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;days_in_waiting_list&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x299261a1608&gt;
+</pre></div>
+</div>
+<img alt="_images/luis_14_1.png" src="_images/luis_14_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## comparación respecto a is_canceled</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;days_in_waiting_list&#39;</span><span class="p">],</span> <span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;is_canceled&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">/</span><span class="n">r</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>is_canceled</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>days_in_waiting_list</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.634182</td>
+      <td>0.365818</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.500000</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>330</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>379</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>80 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="customer-type">
+<h1>Customer_type:<a class="headerlink" href="#customer-type" title="Permalink to this headline">¶</a></h1>
+<p>variable categórica que clasifica los tipos d ereservas en:contractuales, grupales, transitorias o perteneciente a una transitoria.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;customer_type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count         10000
+unique            4
+top       Transient
+freq           7530
+Name: customer_type, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;customer_type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x29926408a88&gt;
+</pre></div>
+</div>
+<img alt="_images/luis_18_1.png" src="_images/luis_18_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Comparación respecto is_canceled.</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;customer_type&#39;</span><span class="p">],</span> <span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;is_canceled&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">/</span><span class="n">r</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>is_canceled</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>customer_type</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Contract</th>
+      <td>0.710227</td>
+      <td>0.289773</td>
+    </tr>
+    <tr>
+      <th>Group</th>
+      <td>0.857143</td>
+      <td>0.142857</td>
+    </tr>
+    <tr>
+      <th>Transient</th>
+      <td>0.585392</td>
+      <td>0.414608</td>
+    </tr>
+    <tr>
+      <th>Transient-Party</th>
+      <td>0.749037</td>
+      <td>0.250963</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="adr">
+<h1>ADR:<a class="headerlink" href="#adr" title="Permalink to this headline">¶</a></h1>
+<p>Variable cuantitativa que refleja el ratio entre precio pagado por la reserva o estancia, dividido entre el número de noches de estancia del usuario.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;adr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    10000.000000
+mean       102.150192
+std         48.778734
+min          0.000000
+25%         68.530000
+50%         94.000000
+75%        126.000000
+max        388.000000
+Name: adr, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;adr&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x29926528708&gt;
+</pre></div>
+</div>
+<img alt="_images/luis_22_1.png" src="_images/luis_22_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;adr&#39;</span><span class="p">],</span> <span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;is_canceled&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">/</span><span class="n">r</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>is_canceled</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>adr</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.0</th>
+      <td>0.901235</td>
+      <td>0.098765</td>
+    </tr>
+    <tr>
+      <th>0.5</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>2.0</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4.0</th>
+      <td>0.500000</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>5.2</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>353.0</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>359.0</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>363.0</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>372.0</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>388.0</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>2175 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="required-car-parking-spaces">
+<h2>Required_car_parking_spaces:<a class="headerlink" href="#required-car-parking-spaces" title="Permalink to this headline">¶</a></h2>
+<p>Número de plazas de parking solicitadas por el usuario.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;required_car_parking_spaces&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    10000.00000
+mean         0.06440
+std          0.24629
+min          0.00000
+25%          0.00000
+50%          0.00000
+75%          0.00000
+max          2.00000
+Name: required_car_parking_spaces, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;required_car_parking_spaces&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x161e8d17b08&gt;
+</pre></div>
+</div>
+<img alt="_images/luis_26_1.png" src="_images/luis_26_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Comparación respecto is_canceled.</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;required_car_parking_spaces&#39;</span><span class="p">],</span> <span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;is_canceled&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">/</span><span class="n">r</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>is_canceled</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>required_car_parking_spaces</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.599166</td>
+      <td>0.400834</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="total-of-special-requests">
+<h2>Total_of_special_requests:<a class="headerlink" href="#total-of-special-requests" title="Permalink to this headline">¶</a></h2>
+<p>número total de requisitos especiales solicitados por el usuario.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;total_of_special_requests&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    10000.000000
+mean         0.579300
+std          0.797731
+min          0.000000
+25%          0.000000
+50%          0.000000
+75%          1.000000
+max          5.000000
+Name: total_of_special_requests, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;total_of_special_requests&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x161e8fd0c48&gt;
+</pre></div>
+</div>
+<img alt="_images/luis_30_1.png" src="_images/luis_30_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Comparación respecto is_canceled</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;total_of_special_requests&#39;</span><span class="p">],</span> <span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;is_canceled&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">/</span><span class="n">r</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reservation-status">
+<h2>reservation_status:<a class="headerlink" href="#reservation-status" title="Permalink to this headline">¶</a></h2>
+<p>Último estado de la reserva, variable categórica que clasifica en: cancelado, check-out (finalizada estancia), sin aparecer (el usuario no ha realizado el check in, informando al hotel la razón)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;reservation_status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count         10000
+unique            3
+top       Check-Out
+freq           6249
+Name: reservation_status, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;reservation_status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x161e885ab48&gt;
+</pre></div>
+</div>
+<img alt="_images/luis_34_1.png" src="_images/luis_34_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Comparación respecto is_canceled</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;reservation_status&#39;</span><span class="p">],</span> <span class="n">datos_booking</span><span class="p">[</span><span class="s1">&#39;is_canceled&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">/</span><span class="n">r</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>is_canceled</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>reservation_status</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Canceled</th>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Check-Out</th>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>No-Show</th>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="reservation-status-date">
+<h2>reservation_status_date<a class="headerlink" href="#reservation-status-date" title="Permalink to this headline">¶</a></h2>
+<p>Fecha de la última actualización del estado de la reserva</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;reservation_status_date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count          10000
+unique           849
+top       21/10/2015
+freq             137
+Name: reservation_status_date, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fechas</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_EDA_variables</span><span class="p">[</span><span class="s2">&quot;reservation_status_date&quot;</span><span class="p">])</span>
+<span class="n">fechas</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x21b95c1eac8&gt;
+</pre></div>
+</div>
+<img alt="_images/luis_38_1.png" src="_images/luis_38_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="notebooks.html" title="previous page">Content with notebooks</a>
+    <a class='right-next' id="next-link" href="Hotels_eda_analysis.html" title="next page">EDA - Fundamentos de Análisis de Datos</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Moscow Mavericks<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
