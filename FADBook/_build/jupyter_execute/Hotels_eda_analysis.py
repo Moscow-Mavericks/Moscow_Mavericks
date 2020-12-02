@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # EDA - Fundamentos de Análisis de Datos
+# # Análisis y modelización
 
 # ## Añadir heatmap de datos faltantes!!!!!!!!
 # https://github.com/ResidentMario/missingno
 
-# ## Librerias
+# ## Carga de librerias
 # 
+# Para el correcto funcionamiento del análisis, se requiere el uso de las siguientes librerias:
 
 # In[1]:
 
@@ -25,6 +26,19 @@ warnings.filterwarnings('ignore')
 
 # ## Datos
 # 
+# ### Contexto
+# 
+# ¿Alguna vez te has preguntado cuándo es la mejor época del año para reservar una habitación de hotel? ¿O la duración óptima de la estancia para obtener la mejor tarifa diaria? ¿Y si quisiera predecir si un hotel es probable que reciba un número desproporcionadamente alto de solicitudes especiales?
+# 
+# Mediante este conjunto de datos de reservas de hotel nos proponemos explorar estas preguntas!
+# 
+#  ### Contenido
+#  
+# Este conjunto de datos contiene información sobre las reservas de un hotel de ciudad y de un hotel turístico, e incluye información como la fecha de la reserva, la duración de la estancia, el número de adultos, niños y/o bebés y el número de plazas de aparcamiento disponibles, entre otras cosas.
+# 
+# Toda la información de identificación personal se ha eliminado de los datos.
+# 
+# ### Carga de datos
 
 # In[2]:
 
@@ -39,6 +53,8 @@ data.head()
 data.info()
 
 
+# Podemos observar que nuestro data.set consta de 31 variables, 20 variables numericas, aunque muchas de ellas son categóricas, y el resto de tipo indefinido. Iremos analizando cada una de ellas de manera individual, y en caso de considerar conveniente, realizaremos la comparación con nuestra variable a predecir.
+# 
 # Vamos a observar un resumen sobre las variables numéricas:
 
 # In[4]:

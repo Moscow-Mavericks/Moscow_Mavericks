@@ -4,6 +4,8 @@
 title: Fund. Análisis de Datos
 author: Moscow Mavericks
 logo: logo.png
+copyright: "URJC Máster Data Science"
+exclude_patterns: ["**.ipynb_checkpoints"]
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -21,8 +23,6 @@ repository:
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: develop  # Which branch of the repository should be used when creating links (optional)
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: false
   use_repository_button: true
